@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/material_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/baseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/base_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/baseAmountInput"
+        android:layout_width="240dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:autofillHints="0.0"
+        android:inputType="numberDecimal"
+        android:hint="@string/input_hint"
+        app:layout_constraintLeft_toRightOf="@id/baseLabel"
+        app:layout_constraintTop_toTopOf="@id/baseLabel"
+        app:layout_constraintBottom_toBottomOf="@id/baseLabel"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/percentageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/percentage_label_default"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintRight_toRightOf="@id/baseLabel"
+        app:layout_constraintTop_toBottomOf="@id/baseLabel" />
+
+    <SeekBar
+        android:id="@+id/percentageSeekBar"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:max="30"
+        app:layout_constraintBottom_toBottomOf="@+id/percentageLabel"
+        app:layout_constraintLeft_toRightOf="@id/percentageLabel"
+        app:layout_constraintStart_toStartOf="@+id/baseAmountInput"
+        app:layout_constraintTop_toTopOf="@id/percentageLabel" />
+
+    <TextView
+        android:id="@+id/encouragementLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/default_emoji"
+        app:layout_constraintEnd_toEndOf="@+id/percentageSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/percentageSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/percentageSeekBar" />
+
+    <TextView
+        android:id="@+id/peopleCountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/percentageLabel"
+        app:layout_constraintTop_toBottomOf="@+id/percentageLabel" />
+
+    <EditText
+        android:id="@+id/peopleCountInput"
+        android:layout_width="160dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Ppl Count"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/peopleCountLabel"
+        app:layout_constraintStart_toStartOf="@+id/percentageSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/peopleCountLabel" />
+
+    <TextView
+        android:id="@+id/tipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/tip_label"
+        app:layout_constraintRight_toRightOf="@id/baseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/peopleCountLabel" />
+
+    <TextView
+        android:id="@+id/tipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_tip"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tipLabel"
+        app:layout_constraintLeft_toRightOf="@id/tipLabel"
+        app:layout_constraintStart_toStartOf="@+id/baseAmountInput"
+        app:layout_constraintTop_toTopOf="@id/tipLabel" />
+
+    <TextView
+        android:id="@+id/perPersonLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/per_person_string"
+        app:layout_constraintBottom_toBottomOf="@+id/tipAmount"
+        app:layout_constraintStart_toEndOf="@+id/tipAmount"
+        app:layout_constraintTop_toTopOf="@+id/tipAmount" />
+
+    <TextView
+        android:id="@+id/totalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/total_label"
+        app:layout_constraintRight_toRightOf="@id/baseLabel"
+        app:layout_constraintTop_toBottomOf="@id/tipLabel" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_total"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/totalLabel"
+        app:layout_constraintLeft_toRightOf="@id/totalLabel"
+        app:layout_constraintStart_toStartOf="@+id/baseAmountInput"
+        app:layout_constraintTop_toTopOf="@id/totalLabel" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/footer_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:fitsSystemWindows="true"-->
+    <!--    tools:context=".MainActivity">-->
+
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:fitsSystemWindows="true">-->
+
+    <!--        <com.google.android.material.appbar.MaterialToolbar-->
+    <!--            android:id="@+id/toolbar"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="?attr/actionBarSize" />-->
+
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <!--    <include layout="@layout/content_main" />-->
+
+    <!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_marginEnd="@dimen/fab_margin"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        app:srcCompat="@android:drawable/ic_dialog_email" />-->
+
+    <!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->
